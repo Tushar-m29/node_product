@@ -1,7 +1,10 @@
 const mongoose=require('mongoose');
+require('dotenv').config();
+
 
 //Define the MongoDB Connection Url
-const mongoURL='mongodb://localhost:27017/store' //mydatabase is a database name which could be changed
+// const mongoURL=process.env.MONGODB_LOCAL_URL //mydatabase is a database name which could be changed
+const mongoURL=process.env.MONGODB_URL;
 
 mongoose.connect(mongoURL);
 

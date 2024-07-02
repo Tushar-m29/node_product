@@ -1,9 +1,10 @@
 const express = require('express');
 const app=express();
 const db=require("./db");
-
+require('dotenv').config();
 
 const Product=require('./Models/Product');
+const PORT=process.env.PORT || 3000
 
 const bodyparser=require('body-parser');
 app.use(bodyparser.json());//stored in req.body
@@ -43,6 +44,6 @@ app.use('/product',productRoutes);
 app.use('/person',personRoutes);
 
 
-app.listen(9000,function(){
+app.listen(PORT,function(){
     console.log("Listening On Port 9000")
 });
